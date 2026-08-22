@@ -15,11 +15,15 @@ function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return
-  });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className=" transition-all fixed top-0 left-0 w-full z-1000 backdrop-blur-3xl">
+    <header
+      className={`transition-all fixed top-0 left-0 w-full z-1000 backdrop-blur-3xl `}
+      {...isScrolled}
+      //iscrolled
+    >
       <div className="bg-transparent flex items-center justify-center  max-w-1920 ">
         <img
           src={logo}
