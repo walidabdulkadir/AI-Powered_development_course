@@ -20,9 +20,9 @@ function Header() {
 
   return (
     <header
-      className={`transition-all fixed top-0 left-0 w-full z-1000 backdrop-blur-3xl `}
-      {...isScrolled}
-      //iscrolled
+      className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${
+        isScrolled ? "bg-black/95 backdrop-blur-md" : "bg-transparent"
+      }`}
     >
       <div className="bg-transparent flex items-center justify-center  max-w-1920 ">
         <img
