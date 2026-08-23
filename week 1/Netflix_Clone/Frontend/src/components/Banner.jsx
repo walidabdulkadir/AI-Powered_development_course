@@ -28,10 +28,8 @@ function Banner() {
             My Lists
           </button>
         </div>
-        <div className="h-20 ">
-          {/* decore */}
-          {/* fading */}
-        </div>
+        {/* fading */}
+        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none" />
       </div>
     </div>
   );
