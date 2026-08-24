@@ -7,12 +7,12 @@ import coldStorage from "../assets/image/coldStorage.webp";
 import hamnet from "../assets/image/hamnet.webp";
 import marshals from "../assets/image/marshals.webp";
 import monarch from "../assets/image/monarchLegacyOfMonsters.webp";
-import pursuit from "../assets/image/pursuitOfJade.webp";
-import scream from "../assets/image/pursuitOfJade.webp";
-import TheBride from "../assets/image/TheBride.webp";
-import Vladimir from "../assets/image/vladimir.webp";
-import YoungSherlock from "../assets/image/youngSherlock.webp";
-import hoppers from "../assets/image/hoppers.webp";
+// import pursuit from "../assets/image/pursuitOfJade.webp";
+// import scream from "../assets/image/pursuitOfJade.webp";
+// import TheBride from "../assets/image/TheBride.webp";
+// import Vladimir from "../assets/image/vladimir.webp";
+// import YoungSherlock from "../assets/image/youngSherlock.webp";
+// import hoppers from "../assets/image/hoppers.webp";
 
 export const movies = [
   {
