@@ -3,33 +3,67 @@ import { BsPlusCircle } from "react-icons/bs";
 import { GoCheckCircle } from "react-icons/go";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
-function Card({ movies }) {
+function Card({ movies, index = 1, totalCards = 10 }) {
+  // Determine hover direction based on card position in row
+  const getHoverTranslate = () => {
+    if (index === 0) return "hover:translate-x-6"; // First card shifts right
+    if (index === totalCards - 1) return "hover:-translate-x-6"; // Last card shifts left
+    return "hover:scale-125"; // Center cards expand normally
+  };
+
   return (
-    <div>
-      <img src={movies.poster_path} alt="poster_image" />
+    <div
+      style={{ flexShrink: 0 }}
+      className={`relative group w-64 h-36 bg-neutral-900 rounded-md transition-all duration-300 ease-in-out hover:z-50 hover:scale-125 ${getHoverTranslate()} hover:shadow-2xl hover:shadow-black`}
+    >
+      <img
+        src={movies.poster_path}
+        alt="poster_image"
+        className="w-full h-36 object-cover rounded-t-md group-hover:rounded-b-none transition-all duration-300"
+      />
 
-      <div>
-        <img src={movies.poster_path} alt="poster_image" />
-
-        <div>Badge</div>
-
-        <div className="flex items-center justify-start gap-2">
-          <FaCirclePlay size={40} color="white" />
-          <BsPlusCircle size={40} color="white" />
-          <GoCheckCircle size={40} color="white" />
-          <IoIosArrowDropdownCircle size={40} color="white" />
+      <div className="hidden group-hover:block absolute top-full left-0 w-full bg-neutral-900 p-4 rounded-b-md shadow-lg transition-all duration-300 space-y-3">
+        <div className="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">
+          Recently Added
         </div>
 
-        <div className="flex gap-4">
-          <span>U/A 16+</span>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <FaCirclePlay
+              size={32}
+              className="text-white hover:opacity-80 cursor-pointer"
+            />
+            <BsPlusCircle
+              size={32}
+              className="text-white hover:opacity-80 cursor-pointer"
+            />
+            <GoCheckCircle
+              size={32}
+              className="text-white hover:opacity-80 cursor-pointer"
+            />
+          </div>
+          <IoIosArrowDropdownCircle
+            size={32}
+            className="text-white hover:opacity-80 cursor-pointer"
+          />
+        </div>
+
+        <div className="flex gap-4 text-xs font-semibold text-neutral-300">
+          <span className="border border-neutral-600 px-1 py-0.5 text-[10px]">
+            U/A 16+
+          </span>
           <span>Movie</span>
-          <span>HD</span>
+          <span className="border border-neutral-600 px-1 text-[10px] rounded">
+            HD
+          </span>
         </div>
 
-        <div className="flex gap-3">
-          <span className="text-base">Sci-Fi</span>
-          <span className="text-base"> • Thrillers</span>
-          <span className="text-base"> • Suspense</span>
+        <div className="flex gap-2 text-xs text-neutral-400">
+          <span>Sci-Fi</span>
+          <span>•</span>
+          <span>Thrillers</span>
+          <span>•</span>
+          <span>Suspense</span>
         </div>
       </div>
     </div>
