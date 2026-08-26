@@ -1,8 +1,9 @@
 import Banner from "./components/Banner";
-import Card from "./components/Card";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { BrowserRouter } from "react-router-dom";
+import SlideShow from "./components/SlideShow";
 import { movies } from "./Data/Data";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
@@ -10,11 +11,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Banner />
-        <div>
-          {movies.map((movie) => (
-            <Card key={movie.id} movies={movie} />
-          ))}
-        </div>
+        <SlideShow title="Popular on Netflix" movies={movies} />
+        <SlideShow title="Trending" movies={movies} />
+        <SlideShow title="Releses" movies={movies} />
+        <SlideShow title="Action" movies={movies} />
+        <Footer />
       </BrowserRouter>
     </div>
   );
