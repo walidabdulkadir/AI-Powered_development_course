@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Card from "./Card";
 import styles from "./SlideShow.module.css";
-// import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 function SlideShow({ title, movies }) {
   return (
@@ -27,7 +26,7 @@ function SlideShow({ title, movies }) {
             }}
           >
             {movies?.map((movie) => (
-              <SwiperSlide key={movie.id || movie.poster_path}>
+              <SwiperSlide key={movie.id}>
                 <Card movies={movie} />
               </SwiperSlide>
             ))}
