@@ -7,8 +7,6 @@ import SlideShow from "./components/SlideShow";
 import { BrowserRouter } from "react-router-dom";
 import { movieInstances } from "./utility/movieInstances";
 import requests from "./utility/requestUrl";
-// import { movieInstances } from "./utility/movieInstances";
-// import requests from "./utility/requestUrl";
 
 function App() {
   const [movies, setMovies] = useState({

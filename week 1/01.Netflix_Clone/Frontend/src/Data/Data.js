@@ -13,7 +13,7 @@ import monarch from "../assets/image/monarchLegacyOfMonsters.webp";
 // import Vladimir from "../assets/image/vladimir.webp";
 // import YoungSherlock from "../assets/image/youngSherlock.webp";
 // import hoppers from "../assets/image/hoppers.webp";
-// 06070c94895643e7d995dd3e010e4a3a
+
 export const movies = [
   {
     id: 1,
