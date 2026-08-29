@@ -54,7 +54,7 @@ function Banner() {
           </button>
         </div>
         {/* fading */}
-        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to- from-black via-black/70 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
       </div>
     </div>
   );
