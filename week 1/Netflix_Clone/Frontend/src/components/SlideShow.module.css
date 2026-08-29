@@ -1,5 +1,6 @@
 .title {
   color: white;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 /* Make wrapper stable */
@@ -48,4 +49,37 @@
 .row:hover :global(.swiper-button-next) {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .row :global(.swiper) {
+    height: 320px;
+    margin-bottom: -120px;
+    padding: 0 10px;
+  }
+
+  .row :global(.swiper-slide) {
+    padding-top: 2rem;
+  }
+
+  /* Always show nav on mobile (no hover on touch) */
+  .row :global(.swiper-button-prev),
+  .row :global(.swiper-button-next) {
+    opacity: 0.7;
+    pointer-events: auto;
+  }
+
+  .row :global(.swiper-button-prev::after),
+  .row :global(.swiper-button-next::after) {
+    font-size: 10px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .row :global(.swiper) {
+    height: 370px;
+    margin-bottom: -140px;
+    padding: 0 30px;
+  }
 }

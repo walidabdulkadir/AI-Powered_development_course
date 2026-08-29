@@ -29,35 +29,36 @@ function Banner() {
 
   return (
     <div
-      className="relative w-full h-135 bg-cover bg-center- bg-no-repeat object-contain text-white shrink-0"
+      className="relative w-full h-[60vh] sm:h-[70vh] md:h-[85vh] bg-cover bg-center bg-no-repeat object-contain text-white shrink-0"
       style={{
         backgroundImage: `url("${BANNER_BASE}${bannerImage.backdrop_path}")`,
       }}
     >
-      <div className="pl-10 pt-35">
-        <img src={logo} alt="logo" className="w-40" />
+      <div className="px-4 sm:px-6 md:px-10 pt-20 sm:pt-28 md:pt-35">
+        <img src={logo} alt="logo" className="w-24 sm:w-32 md:w-40" />
 
-        <h1 className=" text-3xl font-medium pb-5">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-medium pb-3 sm:pb-5">
           {bannerImage?.original_name}
         </h1>
-        <h1 className=" h-30 font-bold tracking-wide">
+        <p className="text-xs sm:text-sm md:text-base font-bold tracking-wide max-w-[90%] sm:max-w-[70%] md:max-w-[50%] line-clamp-3 sm:line-clamp-4 mb-4 sm:mb-6">
           {truncate(bannerImage?.overview, 120)}
-        </h1>
-        <div className="flex gap-6 mb-7">
-          <button className=" outline-none rounded-md font-bold h-12 tracking-wide p-4 bg-white text-black flex items-center justify-center gap-3 mb-7 hover:text-white hover:bg-black hover:transition-all duration-75">
-            <Play size={24} />
+        </p>
+        <div className="flex gap-3 sm:gap-6 mb-4 sm:mb-7">
+          <button className="outline-none rounded-md font-bold h-9 sm:h-12 tracking-wide px-3 sm:px-4 text-sm sm:text-base bg-white text-black flex items-center justify-center gap-2 sm:gap-3 hover:text-white hover:bg-black hover:transition-all duration-75">
+            <Play size={18} className="sm:w-6 sm:h-6" />
             Play
           </button>
-          <button className=" outline-none rounded-md font-bold h-12 tracking-wide p-4 bg-white text-black flex  items-center justify-center gap-3 mb-7 hover:text-white hover:bg-black hover:transition-all duration-75">
-            <Info size={24} />
+          <button className="outline-none rounded-md font-bold h-9 sm:h-12 tracking-wide px-3 sm:px-4 text-sm sm:text-base bg-white text-black flex items-center justify-center gap-2 sm:gap-3 hover:text-white hover:bg-black hover:transition-all duration-75">
+            <Info size={18} className="sm:w-6 sm:h-6" />
             My Lists
           </button>
         </div>
         {/* fading */}
-        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-full h-20 sm:h-30 md:h-40 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
       </div>
     </div>
   );
 }
 
 export default Banner;
+
