@@ -21,7 +21,7 @@ function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-1000 transition-all duration-500 ${
         isScrolled ? "bg-black/95 backdrop-blur-md" : "bg-transparent"
       }`}
     >
@@ -47,8 +47,12 @@ function Header() {
             <Link className="text-white font-light text-sm">Tv Shows</Link>
             <Link className="text-white font-light text-sm">Home</Link>
             <Link className="text-white font-light text-sm">My List</Link>
-            <Link className="text-white font-light text-sm whitespace-nowrap">Browse by Language</Link>
-            <Link className="text-white font-light text-sm whitespace-nowrap">New & Popular</Link>
+            <Link className="text-white font-light text-sm whitespace-nowrap">
+              Browse by Language
+            </Link>
+            <Link className="text-white font-light text-sm whitespace-nowrap">
+              New & Popular
+            </Link>
             <Link className="text-white font-light text-sm">Movies</Link>
           </nav>
         </div>
@@ -92,8 +96,12 @@ function Header() {
 
             {isProfile && (
               <div className="flex flex-col absolute top-14 right-4 sm:right-10 p-2 tracking-wide min-w-40 bg-black border-solid border-2 border-gray-400 rounded-md z-50">
-                <Link className="text-white p-2 cursor-pointer text-sm">Account</Link>
-                <Link className="text-white p-2 cursor-pointer text-sm">Help Center</Link>
+                <Link className="text-white p-2 cursor-pointer text-sm">
+                  Account
+                </Link>
+                <Link className="text-white p-2 cursor-pointer text-sm">
+                  Help Center
+                </Link>
                 <button className="text-white p-2 cursor-pointer border-t-2 w-full mt-3 text-sm">
                   Sign out
                 </button>
@@ -106,12 +114,42 @@ function Header() {
       {/* Mobile nav dropdown */}
       {isMobileMenu && (
         <nav className="lg:hidden flex flex-col bg-black/95 backdrop-blur-md px-6 py-4 gap-3 border-t border-gray-800">
-          <Link className="text-white font-light text-sm py-1" onClick={() => setIsMobileMenu(false)}>Tv Shows</Link>
-          <Link className="text-white font-light text-sm py-1" onClick={() => setIsMobileMenu(false)}>Home</Link>
-          <Link className="text-white font-light text-sm py-1" onClick={() => setIsMobileMenu(false)}>My List</Link>
-          <Link className="text-white font-light text-sm py-1" onClick={() => setIsMobileMenu(false)}>Browse by Language</Link>
-          <Link className="text-white font-light text-sm py-1" onClick={() => setIsMobileMenu(false)}>New & Popular</Link>
-          <Link className="text-white font-light text-sm py-1" onClick={() => setIsMobileMenu(false)}>Movies</Link>
+          <Link
+            className="text-white font-light text-sm py-1"
+            onClick={() => setIsMobileMenu(false)}
+          >
+            Tv Shows
+          </Link>
+          <Link
+            className="text-white font-light text-sm py-1"
+            onClick={() => setIsMobileMenu(false)}
+          >
+            Home
+          </Link>
+          <Link
+            className="text-white font-light text-sm py-1"
+            onClick={() => setIsMobileMenu(false)}
+          >
+            My List
+          </Link>
+          <Link
+            className="text-white font-light text-sm py-1"
+            onClick={() => setIsMobileMenu(false)}
+          >
+            Browse by Language
+          </Link>
+          <Link
+            className="text-white font-light text-sm py-1"
+            onClick={() => setIsMobileMenu(false)}
+          >
+            New & Popular
+          </Link>
+          <Link
+            className="text-white font-light text-sm py-1"
+            onClick={() => setIsMobileMenu(false)}
+          >
+            Movies
+          </Link>
         </nav>
       )}
     </header>
@@ -119,4 +157,3 @@ function Header() {
 }
 
 export default Header;
-
