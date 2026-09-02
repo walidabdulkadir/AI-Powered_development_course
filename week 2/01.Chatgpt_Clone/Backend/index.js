@@ -12,9 +12,9 @@ app.get("/", logger, (req, res) => {
   res.send("hello world");
 });
 
-app.get("/about", (req, res) => {
-  res.send("hello world from about");
-});
+// app.get("/about", (req, res) => {
+//   res.send("hello world from about");
+// });
 
 app.get("/api/chat", (req, res) => {
   res.send("hello world from about");
