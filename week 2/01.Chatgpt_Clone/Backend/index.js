@@ -1,29 +1,22 @@
+import "dotenv/config";
 import express from "express";
+import db from "./db/db.config";
 const app = express();
 
-function logger(req, res) {
-  const url = req.url;
-  const method = req.method;
-  console.log(url, method);
-  res.send("from logger middleware");
+async function startserver(err) {
+  try {
+    const connection = await db.getConnection;
+    connection.release();
+    console.log("db connected");
+
+    app.listen(5500, () => {
+      if (err) {
+        throw err;
+      }
+      console.log("Server is running at http://localhost:5500");
+    });
+  } catch (error) {
+    console.error(err.message, "Error in starting server ");
+  }
 }
-
-app.get("/", logger, (req, res) => {
-  res.send("hello world");
-});
-
-// app.get("/about", (req, res) => {
-//   res.send("hello world from about");
-// });
-
-app.get("/api/chat", (req, res) => {
-  res.send("hello world from about");
-});
-
-app.get("/conservation", (req, res) => {
-  res.send("hello world from about");
-});
-
-app.listen(5500, () => {
-  console.log("Server is running at http://localhost:5500");
-});
+startserver();
