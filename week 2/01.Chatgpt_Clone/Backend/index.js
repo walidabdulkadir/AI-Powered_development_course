@@ -1,22 +1,24 @@
 import "dotenv/config";
-import express from "express";
-import db from "./db/db.config";
-const app = express();
 
-async function startserver(err) {
+import express from "express";
+import db from "./db/db.config.js";
+import mainRouter from "./src/api/main.routes.js";
+
+const app = express();
+app.use("/api", mainRouter);
+
+async function startServer() {
   try {
-    const connection = await db.getConnection;
+    const connection = await db.getConnection();
     connection.release();
-    console.log("db connected");
+    console.log("DB connected");
 
     app.listen(5500, () => {
-      if (err) {
-        throw err;
-      }
       console.log("Server is running at http://localhost:5500");
     });
   } catch (error) {
-    console.error(err.message, "Error in starting server ");
+    console.error("Error in starting server:", error.message);
   }
 }
-startserver();
+
+startServer();
