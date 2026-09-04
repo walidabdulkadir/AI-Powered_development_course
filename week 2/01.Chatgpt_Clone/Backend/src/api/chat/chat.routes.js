@@ -6,9 +6,9 @@ import {
 
 const chatRouter = express.Router();
 
-chatRouter.get("/conversation", getConversationController);
-
 chatRouter.post("/conversation", createConversationController);
+
+chatRouter.get("/conversation", getConversationController);
 
 // chatRouter.post("/message")
 
