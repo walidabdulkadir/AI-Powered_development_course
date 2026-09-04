@@ -3,6 +3,7 @@ import "dotenv/config";
 import express from "express";
 import db from "./db/db.config.js";
 import mainRouter from "./src/api/main.routes.js";
+import errorHandler from "./src/middleware/errorHandler.js";
 
 const app = express();
 app.use(express.json());
