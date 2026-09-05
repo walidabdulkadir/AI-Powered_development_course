@@ -1,4 +1,4 @@
-import { createConversationService } from "../service/chat.service";
+import { createConversationService } from "../service/chat.service.js";
 
 export async function createConversationController(req, res) {
   try {
@@ -10,8 +10,8 @@ export async function createConversationController(req, res) {
       message: "Conversation posted successfully",
       data: result,
     });
-  } catch (error) {
-    throw Error;
+  } catch {
+    throw new Error();
   }
 }
 

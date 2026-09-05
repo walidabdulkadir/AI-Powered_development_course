@@ -1,4 +1,4 @@
-import db from "../../../../db/db.config";
+import db from "../../../../db/db.config.js";
 
 import { GoogleGenAI } from "@google/genai";
 
@@ -7,14 +7,14 @@ const geminiClient = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
-// async function main() {
-//   const response = await geminiClient.models.generateContent({
-//     model: "gemini-3-flash-preview",
-//     contents: "Explain how AI works in few words ",
-//   });
-//   console.log();
-// }
-// main();
+async function main() {
+  const response = await geminiClient.models.generateContent({
+    model: "gemini-3-flash-preview",
+    contents: "Explain how AI works in few words ",
+  });
+  console.log(response);
+}
+main();
 
 const getConversationRows = async (limit = 5) => {
   const normalizedLimit = Number.parseInt(limit, 10);
@@ -23,9 +23,9 @@ const getConversationRows = async (limit = 5) => {
       ? 20
       : normalizedLimit;
   const [rows] = await db.execute(
-    `SELECT id,role,content,created_at 
+    `SELECT id,role,content,created_at
      FROM conversation
-     ORDER BY id DESC 
+     ORDER BY id DESC
      LIMIT ${safeLimit}`,
   );
   return rows.reverse();
@@ -57,11 +57,11 @@ export async function createConversationService(question) {
   }
 }
 
-// export async function getConversationService(question) {
-//   try {
-//     return `Chat retrieved successfully with question: ${question}`;
-//   } catch (error) {
-//     console.error("Error in chat:", error.message);
-//     throw error;
-//   }
-// }
+export async function getConversationService(question) {
+  try {
+    return `Chat retrieved successfully with question: ${question}`;
+  } catch (error) {
+    console.error("Error in chat:", error.message);
+    throw error;
+  }
+}
